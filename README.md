@@ -10,6 +10,8 @@ A Leiningen template for a library with additional features.
 
     lein new dryewo-lib me.dryewo/<lib_name>
 
+Then, replace `REPO_OWNER/REPO_NAME` in _README.md_ with the real GitHub coordinates of the repo you'll be keeping this project in.
+
 ## License
 
 Copyright © 2018 Dmitrii Balakhonskii

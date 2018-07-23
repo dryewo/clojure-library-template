@@ -12,7 +12,6 @@ run-test() {
     DEBUG=1 lein new dryewo-lib "$@"
     local project_dir=${1##*/}
     pushd "$project_dir"
-        lein ancient
         lein test
         # Bump a version and check that it's replaced in README.md (part of release procedure)
         lein change version leiningen.release/bump-version :patch
