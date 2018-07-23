@@ -4,7 +4,7 @@
 [![Clojars Project](https://img.shields.io/clojars/v/dryewo-lib/lein-template.svg)](https://clojars.org/dryewo-lib/lein-template)
 
 
-A Leiningen template for a library with additional features.
+Leiningen template for libraries with better release cycle.
 
 ## Usage
 
