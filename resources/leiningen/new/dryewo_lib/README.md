@@ -1,4 +1,4 @@
-# foo
+# {{name}}
 [![Build Status](https://travis-ci.org/{{repo-path}}.svg?branch=master)](https://travis-ci.org/{{repo-path}})
 [![codecov](https://codecov.io/gh/{{repo-path}}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{repo-path}})
 [![Clojars Project](https://img.shields.io/clojars/v/{{raw-name}}.svg)](https://clojars.org/{{raw-name}})

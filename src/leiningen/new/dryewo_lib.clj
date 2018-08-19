@@ -45,9 +45,7 @@
        ["test/{{nested-dirs}}/core_test.clj" (render "test/_namespace_/core_test.clj" data)]])))
 
 
-(defn dryewo-lib
-  "FIXME: write documentation"
-  [name]
+(defn dryewo-lib [name]
   (main/info "Generating fresh 'lein new' dryewo-lib project.")
   (apply ->files (prepare-files name))
-  (main/info "\n\nReplace REPO_OWNER/REPO_NAME in README.md with the real GitHub coordinates of the repo you'll be keeping this project in.\n"))
+  (main/info "\n\nReplace REPO_OWNER/REPO_NAME in README.md and CHANGELOG.md with the real GitHub coordinates of the repo you'll be keeping this project in.\n"))
