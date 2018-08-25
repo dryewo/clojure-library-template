@@ -6,7 +6,7 @@
             [clojure.string :as str]))
 
 
-(defn prepare-data [name]
+(defn prepare-data [name owner repo]
   (let [namespace    (project-name name)
         escaped-name (-> name
                          (str/replace #"\." "\\\\.")
@@ -16,23 +16,17 @@
      :namespace     namespace
      :package       (sanitize namespace)
      :nested-dirs   (name-to-path namespace)
-     :repo-path     "REPO_OWNER/REPO_NAME"
-     :version-regex (pr-str (format "s/\\\\[%s \"[0-9.]*\"\\\\]/[%s \"${:version}\"]/"  escaped-name escaped-name))
+     :repo-path     (str owner "/" repo)
+     :version-regex (pr-str (format "s/\\\\[%s \"[0-9.]*\"\\\\]/[%s \"${:version}\"]/" escaped-name escaped-name))
      :debug         (System/getenv "DEBUG")}))
 
-;(println (prepare-data "org.example/foo1"))
-;
-;(println (-> "org.example/foo1"
-;             (str/replace #"\." "\\\\.")
-;             (str/replace #"/" "\\\\\\\\/")))
 
 (defn prepare-files
   "Generates arguments for ->files. Extracted for testing."
-  [name]
-  (let [data   (prepare-data name)
-        render (renderer "library")]
+  [data]
+  (let [render (renderer "library")]
     (main/debug "Template data:" data)
-    (main/info "Generating a library called" name "based on the 'library' template.")
+    (main/info "Generating a library called" (:raw-name data) "based on the 'library' template.")
     (concat
       [data
        ["project.clj" (render "project.clj" data)]
@@ -45,7 +39,17 @@
        ["test/{{nested-dirs}}/core_test.clj" (render "test/_namespace_/core_test.clj" data)]])))
 
 
+(defn ask-user [propmt]
+  (print propmt)
+  (flush)
+  (read-line))
+
+
 (defn library [name]
   (main/info "Generating fresh 'lein new' library project.")
-  (apply ->files (prepare-files name))
-  (main/info "\n\nReplace REPO_OWNER/REPO_NAME in README.md and CHANGELOG.md with the real GitHub coordinates of the repo you'll be keeping this project in.\n"))
+  (main/info "This template needs GitHub coordinates (REPO_OWNER/REPO_NAME) of the repo you'll be keeping this project in.")
+  (let [owner (ask-user "Enter REPO_OWNER: ")
+        repo  (ask-user "Enter REPO_NAME: ")]
+    (->> (prepare-data name owner repo)
+         (prepare-files)
+         (apply ->files))))

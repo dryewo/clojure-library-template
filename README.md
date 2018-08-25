@@ -10,8 +10,6 @@ Leiningen template for libraries with better release cycle.
 
     lein new library com.example/<lib_name>
 
-Then, replace `REPO_OWNER/REPO_NAME` in _README.md_ with the real GitHub coordinates of the repo you'll be keeping this project in.
-
 Among other improvements, the generated library uses an alternative release cycle:
 
 1. Version in _project.clj_ is the latest release version. It's not decorated with `-SNAPSHOT`.

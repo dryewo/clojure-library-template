@@ -9,7 +9,7 @@ lein do clean, test
 cd target
 
 run-test() {
-    DEBUG=1 lein new library "$@"
+    echo -e "foo\nbar" | DEBUG=1 lein new library "$@"
     local project_dir=${1##*/}
     pushd "$project_dir"
         lein test
@@ -26,6 +26,4 @@ run-test org.example/foo1
 
 # Just in case we want to try it outside of target/
 lein install
-echo ""
-echo "Use:   lein new library org.example.footeam/bar-lib"
-echo ""
+echo -e "\nUse:   lein new library org.example.footeam/bar-lib\n"
