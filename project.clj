@@ -1,6 +1,6 @@
-(defproject dryewo-lib/lein-template "0.2.1"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+(defproject library/lein-template "0.2.1"
+  :description "Leiningen template for libraries with better release cycle."
+  :url "https://github.com/dryewo/clojure-library-template"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :eval-in-leiningen true

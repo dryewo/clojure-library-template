@@ -9,7 +9,7 @@ lein do clean, test
 cd target
 
 run-test() {
-    DEBUG=1 lein new dryewo-lib "$@"
+    DEBUG=1 lein new library "$@"
     local project_dir=${1##*/}
     pushd "$project_dir"
         lein test
@@ -26,4 +26,6 @@ run-test org.example/foo1
 
 # Just in case we want to try it outside of target/
 lein install
-echo "Use:   lein new dryewo-lib org.example.footeam/bar-lib"
+echo ""
+echo "Use:   lein new library org.example.footeam/bar-lib"
+echo ""

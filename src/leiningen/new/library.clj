@@ -1,4 +1,4 @@
-(ns leiningen.new.dryewo-lib
+(ns leiningen.new.library
   (:require [leiningen.new.templates :refer [renderer year date project-name
                                              ->files sanitize-ns name-to-path
                                              multi-segment sanitize]]
@@ -30,9 +30,9 @@
   "Generates arguments for ->files. Extracted for testing."
   [name]
   (let [data   (prepare-data name)
-        render (renderer "dryewo-lib")]
+        render (renderer "library")]
     (main/debug "Template data:" data)
-    (main/info "Generating a library called" name "based on the 'dryewo-lib' template.")
+    (main/info "Generating a library called" name "based on the 'library' template.")
     (concat
       [data
        ["project.clj" (render "project.clj" data)]
@@ -45,7 +45,7 @@
        ["test/{{nested-dirs}}/core_test.clj" (render "test/_namespace_/core_test.clj" data)]])))
 
 
-(defn dryewo-lib [name]
-  (main/info "Generating fresh 'lein new' dryewo-lib project.")
+(defn library [name]
+  (main/info "Generating fresh 'lein new' library project.")
   (apply ->files (prepare-files name))
   (main/info "\n\nReplace REPO_OWNER/REPO_NAME in README.md and CHANGELOG.md with the real GitHub coordinates of the repo you'll be keeping this project in.\n"))

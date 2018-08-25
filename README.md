@@ -1,14 +1,14 @@
-# dryewo-lib
+# clojure-library-template
 
-[![Build Status](https://travis-ci.org/dryewo/dryewo-lib.svg?branch=master)](https://travis-ci.org/dryewo/dryewo-lib)
-[![Clojars Project](https://img.shields.io/clojars/v/dryewo-lib/lein-template.svg)](https://clojars.org/dryewo-lib/lein-template)
+[![Build Status](https://travis-ci.org/dryewo/clojure-library-template.svg?branch=master)](https://travis-ci.org/dryewo/clojure-library-template)
+[![Clojars Project](https://img.shields.io/clojars/v/library/lein-template.svg)](https://clojars.org/library/lein-template)
 
 
 Leiningen template for libraries with better release cycle.
 
 ## Usage
 
-    lein new dryewo-lib me.dryewo/<lib_name>
+    lein new library me.dryewo/<lib_name>
 
 Then, replace `REPO_OWNER/REPO_NAME` in _README.md_ with the real GitHub coordinates of the repo you'll be keeping this project in.
 
