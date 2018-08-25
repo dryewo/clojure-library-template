@@ -8,7 +8,7 @@ Leiningen template for libraries with better release cycle.
 
 ## Usage
 
-    lein new library me.dryewo/<lib_name>
+    lein new library com.example/<lib_name>
 
 Then, replace `REPO_OWNER/REPO_NAME` in _README.md_ with the real GitHub coordinates of the repo you'll be keeping this project in.
 
