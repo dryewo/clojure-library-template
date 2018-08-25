@@ -26,4 +26,4 @@ run-test org.example/foo1
 
 # Just in case we want to try it outside of target/
 lein install
-echo -e "\nUse:   lein new library org.example.footeam/bar-lib\n"
+echo -e "\nUsage:   lein new library org.example.footeam/bar-lib\n"

@@ -26,7 +26,6 @@
   [data]
   (let [render (renderer "library")]
     (main/debug "Template data:" data)
-    (main/info "Generating a library called" (:raw-name data) "based on the 'library' template.")
     (concat
       [data
        ["project.clj" (render "project.clj" data)]
@@ -46,10 +45,11 @@
 
 
 (defn library [name]
-  (main/info "Generating fresh 'lein new' library project.")
   (main/info "This template needs GitHub coordinates (REPO_OWNER/REPO_NAME) of the repo you'll be keeping this project in.")
   (let [owner (ask-user "Enter REPO_OWNER: ")
-        repo  (ask-user "Enter REPO_NAME: ")]
-    (->> (prepare-data name owner repo)
+        repo  (ask-user "Enter REPO_NAME: ")
+        data  (prepare-data name owner repo)]
+    (->> data
          (prepare-files)
-         (apply ->files))))
+         (apply ->files))
+    (main/info "Generated a project based on \"library\" template.")))
