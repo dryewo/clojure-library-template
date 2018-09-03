@@ -12,12 +12,15 @@ run-test() {
     echo -e "foo\nbar" | DEBUG=1 lein new library "$@"
     local project_dir=${1##*/}
     pushd "$project_dir"
+        lein ancient :all
         lein test
         # Bump a version and check that it's replaced in README.md (part of release procedure)
         lein change version leiningen.release/bump-version :patch
         lein change version leiningen.release/bump-version release :patch
         lein update-readme-version
         grep "0.0.1" README.md >/dev/null
+        lein changelog release
+        grep "0.0.1" CHANGELOG.md >/dev/null
     popd
 }
 
