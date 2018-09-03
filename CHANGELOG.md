@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 
 ## [Unreleased]
+
+## [0.3.1] — 2018-09-03
 ### Added
 - _CHANGELOG.md_ created.
 - lein-changelog plugin added to the template.
@@ -17,4 +19,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 Released without _CHANGELOG.md_.
 
 
-[Unreleased]: https://github.com/dryewo/clojure-library-template/compare/0.3.0...HEAD
+[0.3.1]: https://github.com/dryewo/clojure-library-template/compare/0.3.0...0.3.1
+[Unreleased]: https://github.com/dryewo/clojure-library-template/compare/0.3.1...HEAD
