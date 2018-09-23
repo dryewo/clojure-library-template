@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.3.2] — 2018-09-23
+
 ## [0.3.1] — 2018-09-03
 ### Added
 - _CHANGELOG.md_ created.
@@ -24,4 +26,5 @@ Released without _CHANGELOG.md_.
 
 
 [0.3.1]: https://github.com/dryewo/clojure-library-template/compare/0.3.0...0.3.1
-[Unreleased]: https://github.com/dryewo/clojure-library-template/compare/0.3.1...HEAD
+[0.3.2]: https://github.com/dryewo/clojure-library-template/compare/0.3.1...0.3.2
+[Unreleased]: https://github.com/dryewo/clojure-library-template/compare/0.3.2...HEAD
