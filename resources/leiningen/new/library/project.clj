@@ -1,6 +1,6 @@
 (defproject {{raw-name}} "0.0.0"
   :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+  :url "https://github.com/{{repo-path}}"
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies []

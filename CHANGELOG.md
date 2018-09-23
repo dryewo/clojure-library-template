@@ -12,8 +12,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - _CHANGELOG.md_ created.
 - lein-changelog plugin added to the template.
+- Repo URL substitution to the generated _project.clj_.
+- `lein ancient` command to the generated _.travis.yml_.
 ### Changed
-- Updated _CHANGELOG.md_ template. 
+- Updated _CHANGELOG.md_ template.
+### Removed
+- Removed pinned `CLOVERAGE_VERSION` from the generated _.travis.yml_.
 
 ## 0.3.0 — 2018-08-25
 Released without _CHANGELOG.md_.
