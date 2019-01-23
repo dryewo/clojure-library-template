@@ -1,4 +1,4 @@
-(defproject library/lein-template "0.3.2"
+(defproject library/lein-template "0.3.3"
   :description "Leiningen template for libraries with better release cycle."
   :url "https://github.com/dryewo/clojure-library-template"
   :license {:name "Eclipse Public License"
